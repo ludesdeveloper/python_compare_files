@@ -31,6 +31,9 @@ else:
 #comparing files
 results = []
 for index, before_file in enumerate(before_files):
+    #escape init file
+    if "__init__" in before_file:
+        continue 
     #before file read
     os.chdir(before_path)
     file1 = open(before_file, 'r')
